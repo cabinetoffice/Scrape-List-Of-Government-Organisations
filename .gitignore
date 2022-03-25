@@ -3,3 +3,5 @@
 
 # Except these files
 !run.R
+!.gitignore
+!2022-03-25_11-34-22_GMT Organisations on gov UK.csv

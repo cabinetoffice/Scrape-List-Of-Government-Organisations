@@ -16,3 +16,13 @@ clean_items <-
   stringr::str_trim() %>% 
   stringr::str_squish() %>% 
   stringr::str_replace(pattern = " Works with.*", replacement = "")
+
+## Write a csv file to the working directory.
+
+sysdatetime <- Sys.time() %>% 
+  format("%Y-%m-%d_%H-%M-%S_%Z")
+
+readr::write_excel_csv(
+  clean_items %>% tibble::tibble(),
+  file = paste0(sysdatetime, " Organisations on gov UK.csv")
+)
